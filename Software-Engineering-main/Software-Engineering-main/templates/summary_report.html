@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Complaint Summary Report</h2>
+
+<!-- Overview Statistics -->
+<div class="summary-stats">
+    <div class="stat-card">
+        <div class="stat-number">{{ total_complaints }}</div>
+        <div class="stat-label">Total Complaints</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number" style="background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;">{{ approved }}</div>
+        <div class="stat-label">Approved</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number" style="background: linear-gradient(135deg, #ff9800 0%, #e68900 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;">{{ needs_review }}</div>
+        <div class="stat-label">Needs Review</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number" style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;">{{ flagged_complaints }}</div>
+        <div class="stat-label">Flagged</div>
+    </div>
+</div>
+
+<!-- Driver Statistics Table -->
+<div class="report-section">
+    <h3>👤 Driver Statistics</h3>
+    {% if driver_stats %}
+    <table class="report-table">
+        <thead>
+            <tr>
+                <th>Driver Name</th>
+                <th>Total Complaints</th>
+                <th>Approved</th>
+                <th>Needs Review</th>
+                <th>Trucks</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for driver in driver_stats %}
+            <tr {% if driver.flagged %}class="flagged-row"{% endif %}>
+                <td><strong>{{ driver.name }}</strong></td>
+                <td><strong>{{ driver.total }}</strong></td>
+                <td><span class="status-approved">{{ driver.approved }}</span></td>
+                <td><span class="status-needs">{{ driver.needs_review }}</span></td>
+                <td>{{ driver.trucks }}</td>
+                <td>
+                    {% if driver.flagged %}
+                    <span style="color: #dc3545; font-weight: 700; font-size: 15px;">🚩 FLAGGED</span>
+                    {% else %}
+                    <span style="color: #4caf50; font-weight: 700; font-size: 15px;">✓ OK</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="text-align: center; padding: 30px; color: #999; font-size: 16px;">No complaints to report.</p>
+    {% endif %}
+</div>
+
+<div style="text-align: center; margin-top: 20px;">
+    <a href="{{ url_for('complaints') }}" class="btn">← Back to Complaints</a>
+</div>
+
+{% endblock %}

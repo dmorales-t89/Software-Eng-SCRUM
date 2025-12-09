@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Complaint Tracking System</h1>
+            <nav>
+                <a href="/" class="nav-link">Home</a>
+                <a href="/new" class="nav-link">File Complaint</a>
+                <a href="/complaints" class="nav-link">View Complaints</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Complaint Tracking System</p>
+    </footer>
+</body>
+</html>

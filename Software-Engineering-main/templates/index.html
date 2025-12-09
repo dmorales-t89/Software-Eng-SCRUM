@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="home-hero">
+    <h2>Welcome to the Complaint Tracking System</h2>
+    <p class="hero-subtitle">Report and track truck-related complaints efficiently</p>
+    
+    <div class="home-actions">
+        <a href="/new" class="btn btn-large">File a New Complaint</a>
+        <a href="/complaints" class="btn btn-secondary btn-large">View All Complaints</a>
+    </div>
+</div>
+
+<div class="home-info">
+    <h3>How It Works</h3>
+    
+    <div class="steps-grid">
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <h4>Submit Complaint</h4>
+            <p>Fill out the complaint form with truck number, location, date, time, and description of the incident.</p>
+        </div>
+        
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <h4>Track Status</h4>
+            <p>View all submitted complaints organized by truck number. Check the status: Open, Flagged, or Closed.</p>
+        </div>
+        
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <h4>Flag Important Issues</h4>
+            <p>Mark urgent complaints that need immediate attention from supervisors.</p>
+        </div>
+        
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <h4>Close Resolved Cases</h4>
+            <p>Update complaint status to closed once the issue has been properly addressed.</p>
+        </div>
+    </div>
+</div>
+
+<div class="home-features">
+    <div class="feature-box">
+        <h4>Organized by Truck</h4>
+        <p>All complaints are grouped by truck number for easy tracking and management.</p>
+    </div>
+    
+    <div class="feature-box">
+        <h4>Priority Flagging</h4>
+        <p>Mark critical complaints to ensure they receive immediate attention.</p>
+    </div>
+    
+    <div class="feature-box">
+        <h4>Date & Time Tracking</h4>
+        <p>Record exact incident details including location, date, and time.</p>
+    </div>
+</div>
+
+{% endblock %}

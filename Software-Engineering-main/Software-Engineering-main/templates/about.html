@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-card">
+    <h2 class="page-title">About This System</h2>
+    <p class="page-subtext">
+        The Complaint Tracking System is designed to help civilians report unsafe or unprofessional 
+        truck driving behavior quickly and easily. Our system organizes complaints by drivers and 
+        trucks, highlights repeated issues, and gives supervisors a clear overview of company safety.
+    </p>
+
+    <div class="info-section">
+        <h3> What This System Does</h3>
+        <ul>
+            <li>Accepts public complaints through a quick submission form</li>
+            <li>Automatically organizes complaints by driver and truck</li>
+            <li>Flags trucks and drivers with repeated issues</li>
+            <li>Provides a clean summary report for supervisors</li>
+        </ul>
+    </div>
+
+    <div class="info-section">
+        <h3> Our Goal</h3>
+        <p>
+            The goal of this system is to improve road safety by ensuring complaints are 
+            documented, reviewed, and resolved in a consistent and transparent manner.
+        </p>
+    </div>
+</div>
+
+<style>
+.page-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px var(--shadow);
+}
+.page-title {
+    margin-bottom: 10px;
+}
+.page-subtext {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+.info-section {
+    margin-bottom: 30px;
+}
+.info-section h3 {
+    margin-bottom: 10px;
+    color: #6a5af9;
+}
+.info-section ul {
+    padding-left: 20px;
+}
+</style>
+{% endblock %}

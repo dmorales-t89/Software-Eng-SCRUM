@@ -1,0 +1,44 @@
+[
+    {
+        "id": 2,
+        "truck": "101",
+        "street": "1200 Park Road Harrisonburg",
+        "date": "2025-12-03",
+        "time": "20:25",
+        "description": "Driver was driving crazy.",
+        "contact": "",
+        "status": "Open",
+        "flagged": false
+    },
+    {
+        "id": 3,
+        "truck": "102",
+        "street": "Dogwood Dr",
+        "date": "2025-12-03",
+        "time": "18:34",
+        "description": "Ran a red light.",
+        "contact": "",
+        "status": "Open",
+        "flagged": false
+    },
+    {
+        "id": 4,
+        "truck": "105",
+        "street": "Mt Clinton Pike",
+        "date": "2025-12-03",
+        "time": "19:16",
+        "description": "Reckless driving.",
+        "contact": "",
+        "flagged": true
+    },
+    {
+        "id": 10,
+        "truck": "105",
+        "street": "College Ave",
+        "date": "2025-12-03",
+        "time": "19:33",
+        "description": "Speeding through a school zone.",
+        "contact": "",
+        "flagged": true
+    }
+]

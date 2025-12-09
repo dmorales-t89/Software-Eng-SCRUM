@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "truck": "101",
+        "street": "1200 Park Road Harrisonburg",
+        "date": "2025-12-03",
+        "time": "20:25",
+        "description": "Driver was driving erratically.",
+        "contact": "",
+        "status": "Approved",
+        "flagged": true
+    },
+    {
+        "id": 2,
+        "truck": "101",
+        "street": "Broad St",
+        "date": "2025-12-04",
+        "time": "09:10",
+        "description": "Cut me off while changing lanes.",
+        "contact": "",
+        "status": "Approved",
+        "flagged": true
+    },
+    {
+        "id": 3,
+        "truck": "102",
+        "street": "Dogwood Dr",
+        "date": "2025-12-03",
+        "time": "18:34",
+        "description": "Ran a red light.",
+        "contact": "",
+        "status": "Needs Review",
+        "flagged": false
+    },
+    {
+        "id": 4,
+        "truck": "104",
+        "street": "Main Ave",
+        "date": "2025-12-02",
+        "time": "14:05",
+        "description": "Parked blocking driveway.",
+        "contact": "",
+        "status": "Approved",
+        "flagged": false
+    },
+    {
+        "id": 5,
+        "truck": "105",
+        "street": "Mt Clinton Pike",
+        "date": "2025-12-03",
+        "time": "19:16",
+        "description": "Reckless driving, swerving.",
+        "contact": "",
+        "status": "Needs Review",
+        "flagged": true
+    },
+    {
+        "id": 6,
+        "truck": "105",
+        "street": "College Ave",
+        "date": "2025-12-03",
+        "time": "19:33",
+        "description": "Speeding through a school zone.",
+        "contact": "",
+        "status": "Needs Review",
+        "flagged": true
+    },
+    {
+        "id": 7,
+        "truck": "106",
+        "street": "Elm St",
+        "date": "2025-12-01",
+        "time": "07:45",
+        "description": "Driver used mobile phone while driving.",
+        "contact": "",
+        "status": "Approved",
+        "flagged": true
+    },
+    {
+        "id": 8,
+        "truck": "106",
+        "street": "Maple Ave",
+        "date": "2025-12-02",
+        "time": "12:20",
+        "description": "Failed to yield, close pass.",
+        "contact": "",
+        "status": "Approved",
+        "flagged": true
+    },
+    {
+        "id": 10,
+        "truck": "108",
+        "street": "River Rd",
+        "date": "2025-12-04",
+        "time": "11:12",
+        "description": "Slow driving causing traffic backup.",
+        "contact": "",
+        "status": "Needs Review",
+        "flagged": false
+    },
+    {
+        "id": 11,
+        "truck": "110",
+        "street": "Sunset Dr",
+        "date": "2025-12-05",
+        "time": "08:05",
+        "description": "Lane hogging and aggressive tailgating.",
+        "contact": "",
+        "status": "Approved",
+        "flagged": true
+    },
+    {
+        "id": 13,
+        "truck": "103",
+        "street": "Park Road",
+        "date": "2025-12-06",
+        "time": "12:57",
+        "description": "Swerving a lot.",
+        "contact": "",
+        "status": "Needs Review",
+        "flagged": false
+    }
+]

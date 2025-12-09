@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Submit New Complaint</h2>
+
+<div class="form-container">
+    <form method="POST">
+        <div class="form-group-compact">
+            <label for="truck">Truck # *</label>
+            <select name="truck" id="truck" required>
+                <option value="">Select</option>
+                <option value="101">101</option>
+                <option value="102">102</option>
+                <option value="103">103</option>
+                <option value="104">104</option>
+                <option value="105">105</option>
+                <option value="106">106</option>
+                <option value="107">107</option>
+                <option value="108">108</option>
+                <option value="109">109</option>
+                <option value="110">110</option>
+            </select>
+        </div>
+
+        <div class="form-group-compact">
+            <label for="street">Street *</label>
+            <input type="text" name="street" id="street" placeholder="Street name" required>
+        </div>
+
+        <div class="form-row-double">
+            <div class="form-group-compact">
+                <label for="date">Date *</label>
+                <input type="date" name="date" id="date" required>
+            </div>
+
+            <div class="form-group-compact">
+                <label for="time">Time *</label>
+                <input type="time" name="time" id="time" required>
+            </div>
+        </div>
+
+        <div class="form-group-compact">
+            <label for="description">Description *</label>
+            <textarea name="description" id="description" rows="3" placeholder="Describe the incident..." required></textarea>
+        </div>
+
+        <div class="form-group-compact">
+            <label for="contact">Civilian Contact</label>
+            <input type="text" name="contact" id="contact" placeholder="Phone or email (optional)">
+        </div>
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+</div>
+
+{% endblock %}

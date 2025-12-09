@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-card">
+    <h2 class="page-title"> Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <h3> How do I submit a complaint?</h3>
+        <p>Click “File Complaint” in the navigation bar and fill out the short form.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3> How are drivers matched to trucks?</h3>
+        <p>
+            Each truck number is assigned to a specific driver. The system automatically groups complaints 
+            by both driver and truck for clarity.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3>⚠️ Why are some drivers or trucks flagged?</h3>
+        <p>
+            If two or more complaints are submitted for the same truck, the system marks that truck 
+            and its driver as "Flagged" to indicate repeated issues.
+        </p>
+    </div>
+
+    <div class="faq-item">
+        <h3> What is the summary report?</h3>
+        <p>
+            The summary report gives a high-level view of total complaints, driver activity, and complaint 
+            statuses, making it easy for supervisors to review patterns.
+        </p>
+    </div>
+</div>
+
+<style>
+.page-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px var(--shadow);
+}
+.faq-item {
+    margin-bottom: 25px;
+}
+.faq-item h3 {
+    color: #6a5af9;
+    margin-bottom: 5px;
+}
+</style>
+{% endblock %}

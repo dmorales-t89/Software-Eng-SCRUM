@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Complaints by Driver</h2>
+
+{% if complaints_by_driver %}
+  {% for driver, trucks in complaints_by_driver.items() %}
+    {# compute total complaints for this driver #}
+    {% set total = driver_totals[driver] %}
+
+    <details class="card {% if driver_flagged[driver] %}card-flagged{% endif %}" style="margin-bottom: 12px;">
+      <summary>
+        {{ driver }} ({{ total }} complaint{% if total != 1 %}s{% endif %})
+        {% if driver_flagged[driver] %}
+          <span style="color: red; font-weight: bold;"> FLAGGED</span>
+        {% endif %}
+      </summary>
+
+      <ul>
+        {% for truck, clist in trucks.items() %}
+          <li style="margin-bottom: 8px;">
+            <details style="margin-left: 8px;">
+              <summary>
+                Truck {{ truck }} ({{ clist|length }} complaint{% if clist|length != 1 %}s{% endif %})
+              </summary>
+
+              <ul style="margin-left: 16px;">
+                {% for c in clist %}
+                  <li style="margin-bottom: 8px;">
+                    <strong>ID:</strong> {{ c.id }}<br>
+                    <strong>Date:</strong> {{ c.date }}<br>
+                    <strong>Time:</strong> {{ c.time }}<br>
+                    <strong>Street:</strong> {{ c.street }}<br>
+                    <strong>Description:</strong> {{ c.description }}<br>
+                    <strong>Status:</strong> {{ c.status }}<br>
+
+                    <a href="{{ url_for('view_complaints', id=c.id) }}">Open full view</a>
+                  </li>
+                {% endfor %}
+              </ul>
+
+            </details>
+          </li>
+        {% endfor %}
+      </ul>
+
+    </details>
+  {% endfor %}
+{% else %}
+  <p>No complaints have been submitted yet.</p>
+{% endif %}
+
+{% endblock %}

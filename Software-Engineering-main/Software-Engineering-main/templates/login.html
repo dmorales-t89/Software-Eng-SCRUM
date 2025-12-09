@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <h2>Employee Login</h2>
+    <p class="auth-subtitle">
+        This page is for company staff only (dispatcher and safety director).
+    </p>
+
+    {% if error %}
+        <p class="error-message">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST" class="auth-form">
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Log In</button>
+    </form>
+
+    <div class="auth-hint">
+        <p><strong>Demo accounts:</strong></p>
+        <ul>
+            <li>Dispatcher → <code>dispatcher</code> / <code>dispatch123</code></li>
+            <li>Safety Director → <code>safety</code> / <code>safety123</code></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

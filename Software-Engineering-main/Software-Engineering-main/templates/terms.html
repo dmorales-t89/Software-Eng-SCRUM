@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-card">
+    <h2 class="page-title">Terms of Service</h2>
+    <p class="page-subtext">
+        By using the Complaint Tracking System, you agree to the following terms:
+    </p>
+
+    <div class="info-section">
+        <h3>✔️ Purpose of the System</h3>
+        <p>
+            This platform is intended solely for reporting safety-related incidents involving company trucks.
+            False, misleading, or malicious submissions are prohibited.
+        </p>
+    </div>
+
+    <div class="info-section">
+        <h3>✔️ Use of Data</h3>
+        <p>
+            Submitted complaints are stored securely and used only for internal safety review and driver 
+            performance monitoring.
+        </p>
+    </div>
+
+    <div class="info-section">
+        <h3>✔️ Privacy</h3>
+        <p>
+            Contact information (if provided) is confidential and used only for follow-up if necessary.
+        </p>
+    </div>
+
+    <div class="info-section">
+        <h3>✔️ System Integrity</h3>
+        <p>
+            Users may not attempt to manipulate, damage, or interfere with the functioning of this system.
+        </p>
+    </div>
+</div>
+
+<style>
+.page-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px var(--shadow);
+}
+.page-subtext {
+    margin-bottom: 25px;
+}
+.info-section {
+    margin-bottom: 20px;
+}
+.info-section h3 {
+    color: #6a5af9;
+}
+</style>
+{% endblock %}

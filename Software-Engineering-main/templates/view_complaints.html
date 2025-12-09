@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>View Complaint</h2>
+
+{% if complaint is defined and complaint %}
+<div class="card {% if complaint.flagged %}card-flagged{% endif %}">
+    <h3>Complaint #{{ complaint.id }} - Truck {{ complaint.truck }}</h3>
+    <p><strong>Complaint ID:</strong> {{ complaint.id }}</p>
+    <p><strong>Truck #:</strong> {{ complaint.truck }}</p>
+    <p><strong>Street:</strong> {{ complaint.street }}</p>
+    <p><strong>Date:</strong> {{ complaint.date }}</p>
+    <p><strong>Time:</strong> {{ complaint.time }}</p>
+    <p><strong>Description:</strong> {{ complaint.description }}</p>
+    <p><strong>Civilian Contact:</strong> {{ complaint.contact if complaint.contact else "N/A" }}</p>
+
+    {% if complaint.flagged %}
+        <p class="flagged-text">AUTO-FLAGGED (Multiple complaints for this truck)</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('remove_complaint', id=complaint.id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to remove this complaint?');">Remove Complaint</a>
+    <a href="{{ url_for('close_complaint', id=complaint.id) }}" class="btn">Close Complaint</a>
+    <a href="{{ url_for('complaints') }}" class="btn btn-secondary">Back to List</a>
+</div>
+{% else %}
+<p>Complaint not found.</p>
+<a href="{{ url_for('complaints') }}" class="btn">Back to List</a>
+{% endif %}
+
+{% endblock %}

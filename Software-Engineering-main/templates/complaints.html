@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Complaints by Truck</h2>
+
+{% if complaints_by_truck %}
+    {% for truck, complaints in complaints_by_truck.items() %}
+        {% set is_auto_flagged = complaints|length >= 2 %}
+        <details class="card {% if is_auto_flagged %}card-flagged{% endif %}" style="margin-bottom: 12px;">
+            <summary>
+                Truck {{ truck }} ({{ complaints|length }} complaint{% if complaints|length != 1 %}s{% endif %})
+                {% if is_auto_flagged %}
+                    <span style="color: red; font-weight: bold;"> FLAGGED</span>
+                {% endif %}
+            </summary>
+
+            <ul>
+                {% for c in complaints %}
+                    <li style="margin-bottom: 8px;">
+                        <strong>ID:</strong> {{ c.id }}<br>
+                        <strong>Date:</strong> {{ c.date }}<br>
+                        <strong>Time:</strong> {{ c.time }}<br>
+                        <strong>Street:</strong> {{ c.street }}<br>
+                        <strong>Description:</strong> {{ c.description }}<br>
+                        <strong>Status:</strong> {{ c.status }}
+                        {% if c.flagged %}
+                            <span style="color: red;"> (FLAGGED)</span>
+                        {% endif %}
+                        <br>
+                        <a href="{{ url_for('view_complaints', id=c.id) }}">Open full view</a> |
+                        <a href="{{ url_for('close_complaint', id=c.id) }}">Close</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </details>
+    {% endfor %}
+{% else %}
+    <p>No complaints have been submitted yet.</p>
+{% endif %}
+
+{% endblock %}
